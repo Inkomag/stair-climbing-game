@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stair Climbing Game</title>
+    <style>
+        body { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; margin: 0; font-family: Arial, sans-serif; }
+        .character { width: 50px; height: 50px; background-color: red; margin-bottom: 10px; }
+        .stairs { width: 200px; height: 200px; background-color: lightgray; display: flex; align-items: flex-end; }
+        .counter { margin-top: 20px; font-size: 24px; }
+    </style>
+</head>
+<body>
+    <div class="character"></div>
+    <div class="stairs" id="stairs">
+        <div id="person" style="width: 50px; height: 50px; background-color: blue; position: absolute; bottom: 0;"></div>
+    </div>
+    <div class="counter" id="counter">Step: 0</div>
+    <script>
+        let step = 0;
+        document.getElementById('stairs').addEventListener('click', () => {
+            step++;
+            document.getElementById('person').style.bottom = `${step * 10}px`;
+            document.getElementById('counter').innerText = `Step: ${step}`;
+        });
+    </script>
+</body>
+</html>
